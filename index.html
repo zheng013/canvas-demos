@@ -13,7 +13,7 @@
 
     <canvas id="canvas"></canvas>
     <script>
-        console.log('1')
+
         var canvas = document.getElementById("canvas")
         canvas.width = document.documentElement.clientWidth
         canvas.height = document.documentElement.clientHeight
@@ -65,28 +65,28 @@
         else {
             canvas.onmousemove = (e) => {
                 console.log(last)
+
+
+                if (painting === true) {
+
+                    // console.log(e.clientX)
+                    // console.log(e.clientY)
+                    // ctx.fillRect(e.clientX - 4, e.clientY - 4, 8, 8);(矩形)
+                    // ctx.beginPath();
+                    // ctx.arc(e.clientX, e.clientY, 8, 0, 2 * Math.PI);
+                    // ctx.stroke();
+                    // ctx.fill();
+                    drawLine(last[0], last[1], e.clientX, e.clientY)
+                    last = [e.clientX, e.clientY]
+
+
+
+                }
+                else { console.log("什么都不做") }
             }
 
-            if (painting === true) {
 
-                // console.log(e.clientX)
-                // console.log(e.clientY)
-                // ctx.fillRect(e.clientX - 4, e.clientY - 4, 8, 8);(矩形)
-                // ctx.beginPath();
-                // ctx.arc(e.clientX, e.clientY, 8, 0, 2 * Math.PI);
-                // ctx.stroke();
-                // ctx.fill();
-                drawLine(last[0], last[1], e.clientX, e.clientY)
-                last = [e.clientX, e.clientY]
-
-
-
-            }
-            else { console.log("什么都不做") }
         }
-
-
-
 
     </script>
 
