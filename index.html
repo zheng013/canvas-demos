@@ -20,7 +20,7 @@
         ctx.strokeStyle = "none";
         ctx.lineWidth = '10';
         ctx.lineCap = 'round'
-        let last
+        let last = []
         canvas.onmousedown = (e) => {
             painting = true
             last = [e.clientX, e.clientY]
@@ -46,6 +46,7 @@
             canvas.ontouchmove = (e) => {
                 let x = e.touches[0].clientX
                 let y = e.touches[0].clientY
+                console.log(last)
                 // ctx.beginPath();
                 // ctx.arc(x, y, 8, 0, 2 * Math.PI);
                 // ctx.stroke();
@@ -60,8 +61,9 @@
         }
         else {
             canvas.onmousemove = (e) => {
-                console.log(e.clientX)
-                console.log(e.clientY)
+                console.log(last)
+                // console.log(e.clientX)
+                // console.log(e.clientY)
                 if (painting === true) {
                     // ctx.fillRect(e.clientX - 4, e.clientY - 4, 8, 8);(矩形)
                     // ctx.beginPath();
